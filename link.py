@@ -33,16 +33,16 @@ def insert_middle(list):
         new = node()
         save = node()
         new.data=int(input("enter data\n"))
-        pos= int(input("Enter pos\n"))
+        pos= int(input("Enter pos\n"))-1
         i = 0
         pre = node()
         save= list.head
-        while save.next!=None or i<pos:
+        while save.next!=None and i<pos:
             i+=1
             pre = save
             save = save.next
-        pre.next = new.next
-        new = pre.next
+        new.next = pre.next
+        pre.next = new
     else:
         print("list is empty can't enter in the middle\n")
 
