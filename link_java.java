@@ -37,7 +37,7 @@ class Linked_list
       }
     }
 
-    void insert_middle(int num)
+    void insert_middle(int num,int position)
     {
       Node save = head;
       Node pre = head;
@@ -49,7 +49,7 @@ class Linked_list
       }
       else
       {
-        while(save.next!= null && pos != 2)
+        while(save.next!= null && pos != position)
         {
           pos++;
           pre = save;
@@ -115,7 +115,7 @@ class Linked_list
     System.out.println("start");
     list.insert_start(3);
     list.insert_start(1);
-    list.insert_middle(2);
+    list.insert_middle(2,3);
     list.insert_end(4);
     list.show();
     System.out.println("end");
