@@ -15,11 +15,11 @@ class Linked_list
 
     void show()
     {
-      Node save = head;
-       while(save != null)
+      Node current = head;
+       while(current != null)
        {
-         System.out.println("list is:"+ save.data);
-         save = save.next;
+         System.out.println("list is:"+ current.data);
+         current = current.next;
        }
     }
 
@@ -39,7 +39,7 @@ class Linked_list
 
     void insert_middle(int num,int position)
     {
-      Node save = head;
+      Node current = head;
       Node pre = head;
       Node node = new Node(num);
       int pos=1;
@@ -49,20 +49,20 @@ class Linked_list
       }
       else
       {
-        while(save.next!= null && pos != position)
+        while(current.next!= null && pos != position)
         {
           pos++;
-          pre = save;
-          save = save.next;
+          pre = current;
+          current = current.next;
         }
-        node.next = save;
+        node.next = current;
         pre.next = node;
       }
     }
 
     void insert_end(int num)
     {
-      Node save =head;
+      Node current =head;
       Node node = new Node(num);
       if( head==null)
       {
@@ -70,11 +70,11 @@ class Linked_list
       }
       else
       {
-        while(save.next != null)
+        while(current.next != null)
         {
-          save = save.next;
+          current = current.next;
         }
-        save.next = node;
+        current.next = node;
       }
     }
 
@@ -93,15 +93,15 @@ class Linked_list
     // {
     //     if(head!=None)
     //     {
-    //         save= head
-    //         pre= save
+    //         current= head
+    //         pre= current
     //         pos= int(input("Enter pos\n"))-1
-    //         while i<pos and save.next!=None:
-    //             pre = save
-    //             save= save.next
-    //         pre.next = save.next.next
-    //         print(save.data," is deleted")
-    //         save=None
+    //         while i<pos and current.next!=None:
+    //             pre = current
+    //             current= current.next
+    //         pre.next = current.next.next
+    //         print(current.data," is deleted")
+    //         current=None
     //     }
     //     else:
     //         print("linked list is empty")
